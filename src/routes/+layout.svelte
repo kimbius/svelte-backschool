@@ -2,6 +2,6 @@
     import "../app.css";
 </script>
 
-<div class="min-h-screen py-5">
+<div class="min-h-screen">
     <slot />
 </div>
