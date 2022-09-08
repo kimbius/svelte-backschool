@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="flex flex-col justify-center items-center min-h-screen gap-5">
-        <div class="max-w-md w-full">
+        <div class="max-w-xl w-full">
             <div
                 class="w-full bg-white rounded-lg ring-1 ring-gray-200 p-3 flex flex-col gap-3"
             >
@@ -28,45 +28,53 @@
                         <p class="text-sm">GPA {data.gpa}</p>
                     </div>
                 </div>
-                <table
-                    class="rounded-lg border-collapse border border-slate-500 "
-                >
-                    <thead>
-                        <tr class="text-xs text-gray-500">
-                            <th>รหัสวิชา</th>
-                            <th>ชื่อวิชา</th>
-                            <th>เกรด</th>
-                            <th>รวม</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {#each data.subjects as Item}
-                            <tr
-                                class="text-xs"
-                                class:text-red-400={Item.score.total < 50 &&
-                                    Item.grade != ""}
-                                class:text-yellow-600={Item.score.total < 50 &&
-                                    Item.grade == ""}
-                            >
-                                <td class="text-xs">{Item.code}</td>
-                                <td
-                                    ><span class="font-bold text-sm"
-                                        >{Item.name}</span
-                                    >
-                                    <span class="text-gray-500 text-xs"
-                                        >หน่วยกิต {Item.unit}</span
-                                    ></td
-                                >
-                                <td class="text-center"
-                                    >{Item.grade == ""
-                                        ? "ยังไม่มีการสรุป"
-                                        : Item.grade}</td
-                                >
-                                <td class="text-center">{Item.score.total}</td>
+
+                <div class="overflow-x-auto min-w-full">
+                    <table class="w-full border-collapse border border-slate-500 ">
+                        <thead>
+                            <tr class="text-xs text-gray-500">
+                                <th>วิชา</th>
+                                <th>เกรด</th>
+                                <th>กลาง / ปลาย</th>
+                                <th>รวม</th>
                             </tr>
-                        {/each}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {#each data.subjects as Item}
+                                <tr
+                                    class="text-xs"
+                                    class:text-red-400={Item.score.total < 50 &&
+                                        Item.grade != ""}
+                                    class:text-yellow-600={Item.score.total <
+                                        50 && Item.grade == ""}
+                                >
+                                    <td>
+                                        <div class="flex flex-col">
+                                            <span class="font-bold text-sm"
+                                                >{Item.name}</span
+                                            >
+                                            <span class="text-gray-500 text-xs">
+                                                {Item.code} - {Item.unit} หน่วยกิต
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        {Item.grade == ""
+                                            ? "ยังไม่มีการสรุป"
+                                            : Item.grade}
+                                    </td>
+                                    <td class="text-center"
+                                        >{Item.score.mid_term.total} / {Item
+                                            .score.final_term.total}</td
+                                    >
+                                    <td class="text-center"
+                                        >{Item.score.total}</td
+                                    >
+                                </tr>
+                            {/each}
+                        </tbody>
+                    </table>
+                </div>
                 <div class="flex flex-col gap-2">
                     <div class="flex flex-col gap-1">
                         <h1 class="text-xs font-bold text-gray-500">
@@ -77,9 +85,7 @@
                                 <div
                                     class="rounded-full bg-black h-[15px] w-[15px]"
                                 />
-                                <p>
-                                    สถานการณ์ปกติ
-                                </p>
+                                <p>สถานการณ์ปกติ</p>
                             </div>
                             <div class="flex gap-2">
                                 <div
