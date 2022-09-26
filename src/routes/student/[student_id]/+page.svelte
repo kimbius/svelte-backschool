@@ -30,7 +30,9 @@
                 </div>
 
                 <div class="overflow-x-auto min-w-full">
-                    <table class="w-full border-collapse border border-slate-500 ">
+                    <table
+                        class="w-full border-collapse border border-slate-500 "
+                    >
                         <thead>
                             <tr class="text-xs text-gray-500">
                                 <th>วิชา</th>
@@ -44,9 +46,12 @@
                                 <tr
                                     class="text-xs"
                                     class:text-red-400={Item.score.total < 50 &&
-                                        Item.grade != ""}
+                                        Item.grade != "" &&
+                                        Item.grade != "ผ"}
                                     class:text-yellow-600={Item.score.total <
-                                        50 && Item.grade == ""}
+                                        50 &&
+                                        Item.grade == "" &&
+                                        Item.grade != "ผ"}
                                 >
                                     <td>
                                         <div class="flex flex-col">
@@ -78,7 +83,9 @@
                 <div class="flex flex-col gap-2">
                     <div class="flex flex-col gap-1">
                         <h1 class="text-xs font-bold text-gray-500">
-                            ความหมายของสีต่างๆบนตัวหนังสือ?
+                            ความหมายของสีต่างๆบนตัวหนังสือ? <span class="text-gray-400"
+                                >(ข้างล่างนี้เป็นเพียงการสันนิษฐานเท่านั้น!)</span
+                            >
                         </h1>
                         <div class="flex flex-col gap-2 text-xs">
                             <div class="flex gap-2">

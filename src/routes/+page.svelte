@@ -91,7 +91,7 @@
                             name="query"
                             type="text"
                             class="disabled:opacity-50 transition p-2 bg-gray-100 rounded"
-                            placeholder="กรอกชื่อหรือนามสกุลของคุณ"
+                            placeholder="ชื่อ, นามสกุล หรือห้อง เช่น ม. 3/3 = 33 | 3/13 = 313"
                             required
                         />
                         <button
