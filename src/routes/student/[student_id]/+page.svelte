@@ -68,10 +68,37 @@
                                             ? "ยังไม่มีการสรุป"
                                             : Item.grade}
                                     </td>
-                                    <td class="text-center"
-                                        >{Item.score.mid_term.total} / {Item
-                                            .score.final_term.total}</td
-                                    >
+                                    <td class="group relative text-center">
+                                        <div
+                                            class="pointer-events-none z-[5] space-y-3 rounded shadow text-gray-600 flex-col -translate-y-1/2 absolute opacity-0 group-hover:opacity-100 group-hover:scale-105 scale-0 top-1/2 left-0 p-2 w-full bg-white transition duration-400"
+                                        >
+                                            <div>
+                                                <h1 class="font-bold text-sm">
+                                                    กลาง
+                                                </h1>
+                                                <p class="text-xs">
+                                                    เก็บ {Item.score.mid_term
+                                                        .score} สอบ {Item.score
+                                                        .mid_term.tests}
+                                                </p>
+                                            </div>
+                                            <div>
+                                                <h1 class="font-bold text-sm">
+                                                    ปลาย
+                                                </h1>
+                                                <p class="text-xs">
+                                                    เก็บ {Item.score.final_term
+                                                        .score} สอบ {Item.score
+                                                        .final_term.tests}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <span>{Item.score.mid_term.total}</span>
+                                        /
+                                        <span>
+                                            {Item.score.final_term.total}
+                                        </span>
+                                    </td>
                                     <td class="text-center"
                                         >{Item.score.total}</td
                                     >
@@ -83,7 +110,8 @@
                 <div class="flex flex-col gap-2">
                     <div class="flex flex-col gap-1">
                         <h1 class="text-xs font-bold text-gray-500">
-                            ความหมายของสีต่างๆบนตัวหนังสือ? <span class="text-gray-400"
+                            ความหมายของสีต่างๆบนตัวหนังสือ? <span
+                                class="text-gray-400"
                                 >(ข้างล่างนี้เป็นเพียงการสันนิษฐานเท่านั้น!)</span
                             >
                         </h1>
