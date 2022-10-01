@@ -1,4 +1,7 @@
 <script>
+    import WarningCard from "../../../components/WarningCard.svelte";
+
+
     export let data;
 </script>
 
@@ -8,6 +11,7 @@
             <div
                 class="w-full bg-white rounded-lg ring-1 ring-gray-200 p-3 flex flex-col gap-3"
             >
+                <WarningCard />
                 <div class="flex flex-col gap-2">
                     <div class="flex gap-2 group py-1">
                         <div
